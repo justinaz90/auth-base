@@ -29,6 +29,11 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/auth.logout', (req, res) => {
+  req.logout();
+  res.render('logout');
+});
+
 app.use('/auth', require('./routes/auth.routes'));
 app.use('/user', require('./routes/user.routes'));
 
